@@ -4,9 +4,15 @@ const usersReducer = (state = [], action) => {
 
     switch (action.type) {
         case 'FETCH_ALL_DATA_SUCESS':
-            return[
+            return [
                 ...state,
                 ...action.users
+            ];
+
+        case 'ADD_NEW_USER':
+            return [
+                ...state,
+                action.user
             ];
 
         default:

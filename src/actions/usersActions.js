@@ -6,3 +6,11 @@ export const fetchAllDataSucess = (data) => {
         users: data
     }
 };
+
+export const addNewUser = (user) => {
+
+    return{
+        type: 'ADD_NEW_USER',
+        user: user
+    }
+};
