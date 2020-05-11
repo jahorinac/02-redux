@@ -1,7 +1,11 @@
-## master
+##  master
 
 01 - fetched all users and display
 
-##02/add-new-user
+##  02/add-new-user
 
 02 - added functionality - add user
+
+##  03/delete-user
+
+03 - added functionality - delete user

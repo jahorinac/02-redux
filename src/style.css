@@ -3,6 +3,18 @@ label{
     display: block;
 }
 
+ul{
+    max-width: 300px;
+}
+
 li{
     list-style: none;
+    display: flex;
+    justify-content: space-between;
+    padding: 5px 10px;
+    background-color: #d9eae9;
+}
+
+li:nth-child(odd){
+    background-color: #eae2e2;
 }

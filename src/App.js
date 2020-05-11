@@ -2,6 +2,7 @@ import React, { Component } from 'react';
 import { connect } from "react-redux";
 import getAllData from './actions/getAllData'
 import postData from './actions/postData'
+import deleteData from './actions/deleteData'
 
 class App extends Component {
 
@@ -15,8 +16,15 @@ class App extends Component {
 
     listOfUsers = () => {
         return this.props.users.map(user => {
-            return <li key={user.id}>{user.name}</li>
+            return <li key={user.id}>
+                        {user.name}
+                        <button onClick={() => this.deleteUser(user.id)}>Delete</button>
+                    </li>
         })
+    };
+
+    deleteUser = (id) => {
+        this.props.dispatch(deleteData(id))
     };
 
     handleSubmit = (e) => {

@@ -8,9 +8,15 @@ export const fetchAllDataSucess = (data) => {
 };
 
 export const addNewUser = (user) => {
-
     return{
         type: 'ADD_NEW_USER',
         user: user
+    }
+};
+
+export const deleteUser = (id) => {
+    return{
+        type: 'DELETE_USER',
+        id: id
     }
 };
