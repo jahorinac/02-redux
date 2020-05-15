@@ -1,4 +1,4 @@
-import { fetchAllDataSucess } from './usersActions'
+import { fetchAllDataSucess } from '../actions/usersActions'
 
 
 function getAllDAta(){

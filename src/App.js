@@ -1,8 +1,9 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
-import getAllData from './actions/getAllData'
-import postData from './actions/postData'
-import deleteData from './actions/deleteData'
+import getAllData from './services/getAllData'
+import postData from './services/postData'
+import deleteData from './services/deleteData'
+import EditUser from './components/EditUser'
 
 class App extends Component {
 
@@ -14,12 +15,10 @@ class App extends Component {
         this.props.dispatch(getAllData())
     }
 
-    listOfUsers = () => {
-        return this.props.users.map(user => {
-            return <li key={user.id}>
-                        {user.name}
-                        <button onClick={() => this.deleteUser(user.id)}>Delete</button>
-                    </li>
+    editUser = (user) => {
+
+        this.setState({
+            ...user
         })
     };
 
@@ -40,8 +39,19 @@ class App extends Component {
         })
     };
 
+    listOfUsers = () => {
+        return this.props.users.map(user => {
+            return <li key={user.id}>
+                {user.name}
+                <button onClick={() => this.deleteUser(user.id)} className="delete">Delete</button>
+                <button onClick={() => this.editUser(user)} className="edit">Edit</button>
+            </li>
+        })
+    };
+
     render() {
         console.log(this.props)
+        console.log(this.state)
         return (
             <div>
                 <form onSubmit={this.handleSubmit}>
@@ -50,11 +60,12 @@ class App extends Component {
                     </label>
                     <input id="name" type="text" name="name"
                            onChange={this.handleOnChange}/>
-                    <button type="submit">Submit</button>
+                    <button type="submit">Add User</button>
                 </form>
                 <ul>
                     {this.listOfUsers()}
                 </ul>
+                <EditUser user = {this.state} />
             </div>
         );
     }

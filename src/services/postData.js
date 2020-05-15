@@ -1,4 +1,4 @@
-import { addNewUser } from './usersActions'
+import { addNewUser } from '../actions/usersActions'
 
 function postData(user){
 

@@ -1,4 +1,4 @@
-import { deleteUser } from './usersActions'
+import { deleteUser } from '../actions/usersActions'
 
 function deleteData(id) {
 

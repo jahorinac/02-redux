@@ -9,3 +9,7 @@
 ##  03/delete-user
 
 03 - added functionality - delete user
+
+##  04/edit-user
+
+04 - added functionality - edit user and style

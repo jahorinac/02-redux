@@ -18,3 +18,11 @@ li{
 li:nth-child(odd){
     background-color: #eae2e2;
 }
+
+.delete{
+    margin-left: auto;
+}
+
+.edit{
+    margin-left: 15px;
+}

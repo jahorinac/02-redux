@@ -2,10 +2,6 @@ import { combineReducers }from 'redux';
 
 const usersReducer = (state = [], action) => {
 
-    console.log(state)
-
-    console.log(action)
-
     switch (action.type) {
         case 'FETCH_ALL_DATA_SUCESS':
             return [
@@ -22,6 +18,12 @@ const usersReducer = (state = [], action) => {
         case 'DELETE_USER':
             return [
                 ...state.filter(user => user.id !== action.id)
+            ];
+
+        case 'EDIT_USER':
+            return [
+                ...state.filter(user => user.id !== action.user.id),
+                action.user
             ];
 
         default:
