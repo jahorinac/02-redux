@@ -1,8 +1,8 @@
 import React, { Component } from 'react';
 import { connect } from "react-redux";
 import getAllData from './services/getAllData'
-import postData from './services/postData'
 import deleteData from './services/deleteData'
+import AddUser from './components/AddUser'
 import EditUser from './components/EditUser'
 
 class App extends Component {
@@ -26,19 +26,6 @@ class App extends Component {
         this.props.dispatch(deleteData(id))
     };
 
-    handleSubmit = (e) => {
-        e.preventDefault();
-        this.props.dispatch(postData(this.state));
-    };
-
-    handleOnChange = (e) => {
-        const { name, value } = e.target;
-
-        this.setState({
-            [name]:value
-        })
-    };
-
     listOfUsers = () => {
         return this.props.users.map(user => {
             return <li key={user.id}>
@@ -54,14 +41,7 @@ class App extends Component {
         console.log(this.state)
         return (
             <div>
-                <form onSubmit={this.handleSubmit}>
-                    <label htmlFor="name">
-                    Name:
-                    </label>
-                    <input id="name" type="text" name="name"
-                           onChange={this.handleOnChange}/>
-                    <button type="submit">Add User</button>
-                </form>
+                <AddUser />
                 <ul>
                     {this.listOfUsers()}
                 </ul>
