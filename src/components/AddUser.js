@@ -5,6 +5,17 @@ import postData from "../services/postData";
 
 class AddUser extends Component {
 
+    state = {
+        id: null
+    };
+
+    componentDidUpdate() {
+        const newId = Math.max( ...this.props.users.map((user) => user.id)) + 1;
+        newId !== this.state.id && this.setState({
+            id: newId
+        });
+    }
+
     handleSubmit = (e) => {
         e.preventDefault();
         this.props.dispatch(postData(this.state));

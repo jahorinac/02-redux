@@ -16,3 +16,6 @@
 05 - separated component AddUser
 
 ##  05/firebase
+
+06 - added description
+07 - added firebase functionality: create, read, update, delete data

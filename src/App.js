@@ -5,6 +5,7 @@ import deleteData from './services/deleteData'
 import AddUser from './components/AddUser'
 import EditUser from './components/EditUser'
 
+
 class App extends Component {
 
     state = {
@@ -41,7 +42,7 @@ class App extends Component {
         console.log(this.state)
         return (
             <div>
-                <AddUser />
+                <AddUser {...this.props}/>
                 <ul>
                     {this.listOfUsers()}
                 </ul>
